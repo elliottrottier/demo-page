@@ -1,77 +1,111 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Styled GitHub Site</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | My Web Journey</title>
     <style>
-        /* --- STYLING (The CSS) --- */
+        /* 1. THE FOUNDATION */
         body {
-            background-color: #f0f8ff; 
-            font-family: "Segoe UI", Tahoma, sans-serif;
-            color: #333;
-            line-height: 1.6;
+            /* A sophisticated linear gradient */
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: #2d3436;
             margin: 0;
-            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Keeps content centered vertically */
+            padding: 20px;
+        }
+
+        /* 2. THE MAIN CARD */
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px); /* Modern frosted glass effect */
+            max-width: 500px;
+            padding: 50px 40px;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
             text-align: center;
         }
 
-        h1 {
-            color: #2c3e50;
-            border-bottom: 2px solid #2c3e50;
-            display: inline-block;
-            padding-bottom: 10px;
-            margin-bottom: 30px;
+        /* 3. THE PROFILE IMAGE */
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            object-fit: cover; /* Prevents squishing the image */
+            border-radius: 50%;
+            border: 4px solid #ffffff;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+            transition: transform 0.4s ease; /* Fun interaction! */
         }
 
-        /* This makes your image look professional */
-        .profile-pic {
-            max-width: 300px;
-            height: auto;
-            border-radius: 50%; /* This makes it a circle! */
-            border: 5px solid white;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            margin-bottom: 20px;
+        .profile-pic:hover {
+            transform: scale(1.05); /* Grows slightly when hovered */
+        }
+
+        /* 4. THE TYPOGRAPHY */
+        h1 {
+            font-size: 2rem;
+            color: #1e272e;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
         }
 
         p {
-            max-width: 600px;
-            margin: 20px auto;
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            font-size: 1.1rem;
+            color: #485e6a;
+            line-height: 1.8;
+            margin-bottom: 25px;
         }
 
-        a {
-            color: #3498db;
+        /* 5. THE BUTTON LINK */
+        .btn {
+            display: inline-block;
+            background-color: #0984e3; /* Professional blue */
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
             text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s; /* Makes the color change smooth */
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(9, 132, 227, 0.3);
         }
 
-        a:hover {
-            color: #2980b9;
-            text-decoration: underline;
+        .btn:hover {
+            background-color: #74b9ff;
+            transform: translateY(-2px); /* Lifts the button up */
+            box-shadow: 0 6px 20px rgba(9, 132, 227, 0.4);
+            color: white;
+        }
+
+        /* Responsive design for phones */
+        @media (max-width: 480px) {
+            .container { padding: 30px 20px; }
+            h1 { font-size: 1.5rem; }
         }
     </style>
 </head>
 <body>
 
-    <img src="me.jpg" alt="A photo of me" class="profile-pic">
+    <div class="container">
+        <img src="me.jpg" alt="Portfolio Image" class="profile-pic">
 
-    <h1>Welcome to Our Web Development Class</h1>
-    
-    <p>
-        This is my very first website hosted on GitHub Pages! In this class, we are learning how to use GitHub, manage repositories, and write HTML code to share our ideas with the world.
-    </p>
+        <h1>Welcome to My Journey</h1>
+        
+        <p>
+            I am a student in the Web Development Class, currently mastering GitHub and the art of modern HTML/CSS.
+        </p>
 
-    <p>
-        I just added CSS to this site. Now it has colors, better fonts, and a much cleaner layout!
-    </p>
+        <p>
+            This site represents the start of my technical portfolio, designed with clean aesthetics and user experience in mind.
+        </p>
 
-    <p>
-        Check out my favorite website: <br>
-        <a href="https://www.google.com" target="_blank">Click here to visit Google!</a>
-    </p>
+        <a href="https://www.google.com" target="_blank" class="btn">View My Resources</a>
+    </div>
 
 </body>
 </html>
