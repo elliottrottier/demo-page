@@ -3,52 +3,75 @@
 <head>
     <title>My Styled GitHub Site</title>
     <style>
-        /* This is where the CSS magic happens */
+        /* --- STYLING (The CSS) --- */
         body {
-            background-color: #f0f8ff; /* A light blue background */
-            font-family: "Segoe UI", Tahoma, sans-serif; /* Cleaner fonts */
-            color: #333; /* Dark grey text (easier on the eyes than pure black) */
-            line-height: 1.6; /* Adds space between lines of text */
+            background-color: #f0f8ff; 
+            font-family: "Segoe UI", Tahoma, sans-serif;
+            color: #333;
+            line-height: 1.6;
             margin: 0;
             padding: 40px;
-            text-align: center; /* Centers everything on the page */
-        <p>Check out my favorite website: 
-   <a href="https://www.google.com" target="_blank">Click here to visit Google!</a>
-</p>}
+            text-align: center;
+        }
 
         h1 {
-            color: #2c3e50; /* A nice deep navy for the heading */
-            border-bottom: 2px solid #2c3e50; /* Adds a line under the header */
+            color: #2c3e50;
+            border-bottom: 2px solid #2c3e50;
             display: inline-block;
             padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        /* This makes your image look professional */
+        .profile-pic {
+            max-width: 300px;
+            height: auto;
+            border-radius: 50%; /* This makes it a circle! */
+            border: 5px solid white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
         }
 
         p {
-            max-width: 600px; /* Keeps the text from stretching too wide */
-            margin: 20px auto; /* Centers the paragraph box */
+            max-width: 600px;
+            margin: 20px auto;
             background: white;
-            padding: 20px;
-            border-radius: 10px; /* Rounds the corners */
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Adds a subtle shadow */
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
-    </style> a {
-    color: #3498db; /* A nice blue color */
-    text-decoration: none; /* Removes the underline */
-    font-weight: bold;
-}
 
-a:hover {
-    color: #2980b9; /* Changes color when you mouse over it */
-    text-decoration: underline; /* Brings the underline back on hover */
-}
+        a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s; /* Makes the color change smooth */
+        }
+
+        a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
 
+    <img src="me.jpg" alt="A photo of me" class="profile-pic">
+
     <h1>Welcome to Our Web Development Class</h1>
     
-    <p>This is my very first website hosted on GitHub Pages! In this class, we are learning how to use GitHub, manage repositories, and write HTML code to share our ideas with the world.</p>
+    <p>
+        This is my very first website hosted on GitHub Pages! In this class, we are learning how to use GitHub, manage repositories, and write HTML code to share our ideas with the world.
+    </p>
 
-    <p>I just added CSS to this site. Now it has colors, better fonts, and a much cleaner layout!</p>
+    <p>
+        I just added CSS to this site. Now it has colors, better fonts, and a much cleaner layout!
+    </p>
+
+    <p>
+        Check out my favorite website: <br>
+        <a href="https://www.google.com" target="_blank">Click here to visit Google!</a>
+    </p>
 
 </body>
 </html>
