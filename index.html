@@ -93,7 +93,17 @@
         @media (max-width: 480px) {
             .container { padding: 30px 20px; }
             h1 { font-size: 1.5rem; }
-        }
+        } ul, ol {
+    text-align: left; /* Lists usually look better aligned to the left */
+    display: inline-block; /* This keeps the list centered in your card */
+    margin: 10px 0;
+    color: #485e6a;
+}
+
+li {
+    margin-bottom: 10px; /* Adds space between items so they aren't squished */
+    font-size: 1.05rem;
+}
     </style>
 </head>
 <body>
@@ -115,7 +125,11 @@
     Lately, I've been spending my free time exploring different worlds. My current favorites are <strong>Minecraft</strong> for the creativity, <strong>Valorant</strong> for the strategy, and <strong>Elden Ring</strong> for the challenge!
 </p>
         <a href="https://www.google.com" target="_blank" class="btn">View My Resources</a> <!-- This is a link to the google search engine -->
-    </div>
+    </div> <ul>
+    <li>Exploring new coffee shops</li>
+    <li>Playing guitar</li>
+    <li>Digital photography</li>
+</ul>
 
 </body>
 </html>
