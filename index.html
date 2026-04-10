@@ -41,6 +41,26 @@
             margin-bottom: 25px;
             transition: transform 0.4s ease; /* Fun interaction! */
         }
+        .image-section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee; /* Adds a subtle line between sections */
+}
+
+h3 {
+    color: #485e6a;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.secondary-pic {
+    width: 100%; /* Makes the image fill the width of your card */
+    max-width: 400px; /* But don't let it get TOO big */
+    height: auto;
+    border-radius: 12px; /* Soft rounded corners (not a full circle) */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+}
 
         .profile-pic:hover {
             transform: scale(1.05); /* Grows slightly when hovered */
@@ -110,6 +130,15 @@ li {
 
     <div class="container">
         <img src="me.jpg" alt="Portfolio Image" class="profile-pic"> <!-- This is for my image, it will recognize only the file named "me.jpg" -->
+        <div class="image-section">
+    <h3>Working on My Code</h3>
+    <img src="me2.jpg" alt="A photo of me working on my laptop" class="secondary-pic">
+</div>
+
+<div class="image-section">
+    <h3>My Creative Space</h3>
+    <img src="me3.jpg" alt="A photo of my desk setup" class="secondary-pic">
+</div>
 
         <h1>Welcome to My Journey</h1>
         
