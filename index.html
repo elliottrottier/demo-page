@@ -3,83 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | 3D Premium</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@800&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Portfolio | My Web Journey</title>
+
+    <!-- Google Font (thick + aesthetic) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <!-- External CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-    <div class="orb float-1"></div>
-    <div class="orb float-2"></div>
-    <div class="orb float-3"></div>
+    <!-- Background 3D shapes -->
+    <div class="bg-shape shape1"></div>
+    <div class="bg-shape shape2"></div>
 
-    <main class="scene">
-        
-        <section class="layer" data-aos="zoom-out-up">
-            <div class="content-box hero-card">
-                <img src="me.jpg" alt="Me" class="profile-pic">
-                <h1>LEVEL <span class="accent">UP.</span></h1>
-                <p class="subtitle">Web Developer & Student</p>
-                <div class="btn-wrap">
-                    <a href="https://www.google.com" target="_blank" class="btn-3d">EXPLORE</a>
-                </div>
-            </div>
-        </section>
+    <div class="container">
 
-        <section class="layer grid">
-            <div class="content-box card-3d" data-aos="fade-right">
-                <p class="tag">01. PROCESS</p>
-                <h3>Coding Journey</h3>
-                <div class="img-frame">
-                    <img src="me2.jpg" alt="Coding" class="display-img">
-                </div>
-            </div>
-            <div class="content-box card-3d" data-aos="fade-left">
-                <p class="tag">02. SPACE</p>
-                <h3>Creative Setup</h3>
-                <div class="img-frame">
-                    <img src="me3.jpg" alt="Desk" class="display-img">
-                </div>
-            </div>
-        </section>
+        <img src="me.jpg" alt="Portfolio Image" class="profile-pic">
 
-        <section class="layer" data-aos="fade-up">
-            <div class="content-box dark-card">
-                <h2>BATTLE STATIONS</h2>
-                <div class="game-pills">
-                    <span class="pill">Rainbow Six Siege</span>
-                    <span class="pill">War Thunder</span>
-                    <span class="pill">GTA V</span>
-                </div>
-            </div>
-        </section>
+        <div class="image-section">
+            <h3>Working on My Code</h3>
+            <img src="me2.jpg" class="secondary-pic">
+        </div>
 
-        <section class="layer" data-aos="flip-up">
-            <div class="content-box activity-container">
-                <h2>LIFESTYLE</h2>
-                <div class="activity-grid">
-                    <div class="act-card"><span>Fishing</span></div>
-                    <div class="act-card"><span>Hockey</span></div>
-                    <div class="act-card"><span>Travel</span></div>
-                    <div class="act-card"><span>Cooking</span></div>
-                </div>
-            </div>
-        </section>
+        <div class="image-section">
+            <h3>My Creative Space</h3>
+            <img src="me3.jpg" class="secondary-pic">
+        </div>
 
-        <footer class="layer" data-aos="zoom-in">
-            <div class="footer-links">
-                <a href="https://developer.mozilla.org" target="_blank">MDN</a>
-                <a href="https://www.freecodecamp.org" target="_blank">FREECODECAMP</a>
-            </div>
-        </footer>
+        <h1>Welcome to My Journey</h1>
 
-    </main>
+        <p>
+            I am a student in the Web Development Class, currently mastering GitHub and the art of modern HTML/CSS.
+        </p>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 1000, once: false });
-    </script>
+        <p>
+            This site represents the start of my technical portfolio, designed with clean aesthetics and user experience in mind.
+        </p>
+
+        <h2>My Top 3 Games</h2>
+        <p>
+            My current favorites are <strong>Rainbow Six Siege</strong>, <strong>War Thunder</strong>, and <strong>GTA V</strong>.
+        </p>
+
+        <a href="https://www.google.com" target="_blank" class="btn">View My Resources</a>
+
+        <div class="resources-section">
+            <h3>Learning Resources</h3>
+            <p>These are the websites that are helping me master web development:</p>
+
+            <a href="https://developer.mozilla.org" target="_blank" class="btn secondary">MDN Web Docs</a>
+            <a href="https://www.freecodecamp.org" target="_blank" class="btn secondary">freeCodeCamp Tutorials</a>
+        </div>
+
+    </div>
+
+    <ul>
+        <li>Fishing</li>
+        <li>Playing hockey</li>
+        <li>Travelling</li>
+        <li>Cooking</li>
+    </ul>
+
 </body>
 </html>
