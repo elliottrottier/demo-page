@@ -3,205 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Premium Edition</title>
+    <title>Portfolio | Premium Dark Edition</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <style>
-        /* 1. MODERN VARIABLES - Easy to change colors later */
-        :root {
-            --primary: #0984e3;
-            --accent: #6c5ce7;
-            --text: #2d3436;
-            --glass: rgba(255, 255, 255, 0.85);
-        }
-
-        /* 2. DYNAMIC BACKGROUND */
-        body {
-            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite; /* Subtle moving background */
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            color: var(--text);
-            margin: 0;
-            padding: 40px 20px;
-            overflow-x: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* 3. 3D GLASS CONTAINER */
-        .container {
-            background: var(--glass);
-            backdrop-filter: blur(15px);
-            max-width: 600px;
-            padding: 60px 40px;
-            border-radius: 40px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
-            text-align: center;
-            border: 1px solid rgba(255,255,255,0.3);
-            margin-bottom: 50px;
-            transform-style: preserve-3d; /* Prepares for 3D effects */
-        }
-
-        /* 4. PREMIUM IMAGES */
-        .profile-pic {
-            width: 160px;
-            height: 160px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 6px solid white;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-            margin-top: -120px; /* Overlap effect */
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .profile-pic:hover {
-            transform: scale(1.1) rotate(5deg);
-        }
-
-        .secondary-pic {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            margin: 20px 0;
-            transition: 0.3s;
-        }
-
-        .secondary-pic:hover {
-            transform: translateY(-10px);
-        }
-
-        /* 5. TYPOGRAPHY & SECTIONS */
-        h1 { font-size: 2.5rem; letter-spacing: -1px; margin: 20px 0; }
-        
-        h2 {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            font-size: 1.8rem;
-            color: var(--primary);
-        }
-
-        h2::before, h2::after {
-            content: "";
-            height: 2px;
-            width: 50px;
-            background: var(--primary);
-            opacity: 0.3;
-        }
-
-        /* 6. INTERACTIVE LIST */
-        ul {
-            list-style: none;
-            padding: 0;
-            display: grid;
-            grid-template-columns: 1fr 1fr; /* Two column list */
-            gap: 15px;
-            margin: 30px 0;
-        }
-
-        li {
-            background: white;
-            padding: 15px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: 0.3s;
-        }
-
-        li:hover {
-            background: var(--primary);
-            color: white;
-            transform: scale(1.05);
-        }
-
-        /* 7. NEON BUTTONS */
-        .btn {
-            display: block;
-            background: linear-gradient(to right, var(--primary), var(--accent));
-            color: white;
-            padding: 18px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin: 15px 0;
-            transition: 0.4s;
-            box-shadow: 0 10px 20px rgba(108, 92, 231, 0.3);
-        }
-
-        .btn:hover {
-            box-shadow: 0 15px 30px rgba(108, 92, 231, 0.5);
-            transform: translateY(-5px);
-            filter: brightness(1.1);
-        }
-
-        .btn.secondary {
-            background: white;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-        }
-
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <div class="container" data-aos="zoom-in" data-aos-duration="1000">
-        <img src="me.jpg" alt="Profile" class="profile-pic">
-        
-        <h1 data-aos="fade-up" data-aos-delay="200">My Journey</h1>
-        <p data-aos="fade-up" data-aos-delay="300">
-            Student & Web Developer mastering the future of digital experiences.
-        </p>
-
-        <a href="https://www.google.com" target="_blank" class="btn">Explore Resources</a>
+    <div class="perspective-wrapper">
+        <div class="container" data-aos="zoom-in-up">
+            <img src="me.jpg" alt="Portfolio Image" class="profile-pic"> <h1>Welcome to <br><span>My Journey</span></h1>
+            
+            <p>
+                I am a student in the Web Development Class, currently mastering GitHub and the art of modern HTML/CSS. 
+                This site represents the start of my technical portfolio.
+            </p> <a href="https://www.google.com" target="_blank" class="btn">View My Resources</a> </div>
     </div>
 
     <div class="container" data-aos="fade-right">
-        <h2>Coding Setup</h2>
-        <img src="me2.jpg" alt="Coding" class="secondary-pic">
-        <p>Turning caffeine into high-performance code.</p>
-    </div>
+        <div class="image-section">
+            <h3>Working on My Code</h3>
+            <img src="me2.jpg" alt="A photo of me working on my laptop" class="secondary-pic">
+        </div> <div class="image-section">
+            <h3>My Creative Space</h3>
+            <img src="me3.jpg" alt="A photo of my desk setup" class="secondary-pic">
+        </div> </div>
 
     <div class="container" data-aos="fade-left">
-        <h2>Gaming Worlds</h2>
-        <p>Lately exploring <strong>Minecraft</strong>, <strong>Valorant</strong>, and <strong>Elden Ring</strong>.</p>
-        <img src="me3.jpg" alt="Gaming Setup" class="secondary-pic">
-    </div>
+        <h2>My Top 3 Games</h2>
+        <p>
+            Lately, I've been spending my free time exploring different worlds. My current favorites are 
+            <strong>Rainbow Six Siege</strong>, <strong>War Thunder</strong>, and <strong>GTA V</strong>!
+        </p> </div>
 
     <div class="container" data-aos="flip-up">
-        <h2>Interests</h2>
-        <ul>
-            <li>Coffee Shops</li>
-            <li>Guitar</li>
-            <li>Photography</li>
-            <li>UI Design</li>
+        <h2>My Interests</h2>
+        <ul class="activity-list"> <li>Fishing</li>
+            <li>Playing hockey</li>
+            <li>Travelling</li>
+            <li>Cooking</li>
         </ul>
     </div>
 
     <div class="container" data-aos="fade-up">
-        <h3>Mastery Resources</h3>
-        <a href="https://developer.mozilla.org" target="_blank" class="btn secondary">MDN Docs</a>
-        <a href="https://www.freecodecamp.org" target="_blank" class="btn secondary">freeCodeCamp</a>
+        <div class="resources-section">
+            <h3>Learning Resources</h3>
+            <div class="btn-group">
+                <a href="https://developer.mozilla.org" target="_blank" class="btn secondary">MDN Web Docs</a> <a href="https://www.freecodecamp.org" target="_blank" class="btn secondary">freeCodeCamp</a> </div>
+        </div>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
-            once: false, // Allows animations to repeat when scrolling up/down
+            duration: 1000,
+            once: false,
             mirror: true
         });
     </script>
-
 </body>
 </html>
