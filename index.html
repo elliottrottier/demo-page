@@ -3,64 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Premium Dark Edition</title>
+    <title>Portfolio | Premium Mac Edition</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <div class="perspective-wrapper">
-        <div class="container" data-aos="zoom-in-up">
-            <img src="me.jpg" alt="Portfolio Image" class="profile-pic"> <h1>Welcome to <br><span>My Journey</span></h1>
-            
-            <p>
+    <main class="viewport">
+        
+        <section class="container hero" data-aos="zoom-out">
+            <img src="me.jpg" alt="Profile" class="profile-pic"> <h1>WELCOME TO <br><span class="accent">MY JOURNEY</span></h1>
+            <p class="lead-text">
                 I am a student in the Web Development Class, currently mastering GitHub and the art of modern HTML/CSS. 
                 This site represents the start of my technical portfolio.
-            </p> <a href="https://www.google.com" target="_blank" class="btn">View My Resources</a> </div>
-    </div>
+            </p>
+        </section>
 
-    <div class="container" data-aos="fade-right">
-        <div class="image-section">
-            <h3>Working on My Code</h3>
-            <img src="me2.jpg" alt="A photo of me working on my laptop" class="secondary-pic">
-        </div> <div class="image-section">
-            <h3>My Creative Space</h3>
-            <img src="me3.jpg" alt="A photo of my desk setup" class="secondary-pic">
-        </div> </div>
+        <section class="grid-section">
+            <div class="card" data-aos="fade-up">
+                <h3>Working on My Code</h3>
+                <img src="me2.jpg" alt="Coding" class="secondary-pic"> </div>
+            <div class="card" data-aos="fade-up" data-aos-delay="100">
+                <h3>My Creative Space</h3>
+                <img src="me3.jpg" alt="Desk Setup" class="secondary-pic"> </div>
+        </section>
 
-    <div class="container" data-aos="fade-left">
-        <h2>My Top 3 Games</h2>
-        <p>
-            Lately, I've been spending my free time exploring different worlds. My current favorites are 
-            <strong>Rainbow Six Siege</strong>, <strong>War Thunder</strong>, and <strong>GTA V</strong>!
-        </p> </div>
+        <section class="container" data-aos="fade-up">
+            <h2>MY TOP 3 GAMES</h2>
+            <p class="body-text">
+                Lately, I've been spending my free time exploring different worlds. My current favorites are 
+                <span class="highlight">Rainbow Six Siege</span>, <span class="highlight">War Thunder</span>, and <span class="highlight">GTA V</span>.
+            </p>
+        </section>
 
-    <div class="container" data-aos="flip-up">
-        <h2>My Interests</h2>
-        <ul class="activity-list"> <li>Fishing</li>
-            <li>Playing hockey</li>
-            <li>Travelling</li>
-            <li>Cooking</li>
-        </ul>
-    </div>
+        <section class="container" data-aos="fade-up">
+            <h2>MY INTERESTS</h2>
+            <div class="activity-grid"> <div class="item">Fishing</div>
+                <div class="item">Playing hockey</div>
+                <div class="item">Travelling</div>
+                <div class="item">Cooking</div>
+            </div>
+        </section>
 
-    <div class="container" data-aos="fade-up">
-        <div class="resources-section">
-            <h3>Learning Resources</h3>
+        <section class="container footer" data-aos="fade-up">
+            <h3>RESOURCES</h3>
             <div class="btn-group">
-                <a href="https://developer.mozilla.org" target="_blank" class="btn secondary">MDN Web Docs</a> <a href="https://www.freecodecamp.org" target="_blank" class="btn secondary">freeCodeCamp</a> </div>
-        </div>
-    </div>
+                <a href="https://www.google.com" target="_blank" class="btn">View Google</a>
+                <a href="https://developer.mozilla.org" target="_blank" class="btn secondary">MDN Docs</a>
+                <a href="https://www.freecodecamp.org" target="_blank" class="btn secondary">freeCodeCamp</a>
+            </div>
+        </section>
+
+    </main>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({
-            duration: 1000,
-            once: false,
-            mirror: true
-        });
+        AOS.init({ duration: 800, once: false });
     </script>
 </body>
 </html>
