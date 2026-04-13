@@ -14,66 +14,113 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 40px 20px;
+    overflow-x: hidden;
 }
 
-/* BACKGROUND */
+/* BACKGROUND (MORE DEPTH) */
 .bg {
     position: fixed;
     inset: 0;
     background:
         radial-gradient(circle at 20% 20%, #1f5c3d 0%, transparent 40%),
         radial-gradient(circle at 80% 80%, #0b2e1f 0%, transparent 45%);
-    z-index: -1;
+    z-index: -2;
+    filter: blur(40px);
 }
 
-/* CONTAINER */
+/* FLOATING LIGHT */
+.bg::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: #2eff9a;
+    border-radius: 50%;
+    filter: blur(120px);
+    top: 30%;
+    left: 60%;
+    opacity: 0.2;
+}
+
+/* CONTAINER (3D CARD) */
 .container {
     max-width: 550px;
     width: 100%;
     background: rgba(20, 30, 25, 0.75);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(25px);
     padding: 40px;
     border-radius: 25px;
+
+    transform-style: preserve-3d;
+    transition: transform 0.2s ease;
+
+    box-shadow:
+        0 50px 120px rgba(0,0,0,0.9),
+        inset 0 0 0 1px rgba(255,255,255,0.05);
 }
 
-/* PROFILE */
+/* PROFILE (FLOAT) */
 .profile-pic {
-    width: 120px; /* FIX: was too big visually */
+    width: 120px;
     height: 120px;
     border-radius: 50%;
     display: block;
     margin: 0 auto 25px;
+
+    transform: translateZ(40px);
+    transition: 0.4s;
 }
 
-/* TEXT SCALE FIX (IMPORTANT) */
+.profile-pic:hover {
+    transform: translateZ(60px) scale(1.1);
+}
+
+/* TEXT */
 h1 {
-    font-size: 2.2rem; /* bigger */
+    font-size: 2.4rem;
     margin-bottom: 15px;
+    transform: translateZ(30px);
 }
 
 h2 {
     font-size: 1.4rem;
     margin-top: 25px;
     color: #3cff9b;
+    transform: translateZ(25px);
 }
 
 h3 {
     margin-bottom: 10px;
+    transform: translateZ(20px);
 }
 
 p {
-    font-size: 1.05rem; /* FIX: readable */
+    font-size: 1.05rem;
     line-height: 1.6;
     margin-bottom: 20px;
+    transform: translateZ(20px);
 }
 
-/* IMAGE FIX (THIS WAS YOUR MAIN ISSUE) */
+/* IMAGE SECTION */
+.image-section {
+    margin-top: 25px;
+    transform-style: preserve-3d;
+}
+
+/* IMAGES (REAL DEPTH FIX) */
 .secondary-pic {
     width: 100%;
-    max-width: 280px;  /* IMPORTANT: smaller */
+    max-width: 260px;
     display: block;
     margin: 10px auto;
-    border-radius: 12px;
+    border-radius: 14px;
+
+    transform: translateZ(50px);
+    transition: 0.4s;
+}
+
+.secondary-pic:hover {
+    transform: translateZ(80px) scale(1.05) rotateX(5deg);
 }
 
 /* BUTTON */
@@ -81,9 +128,17 @@ p {
     display: inline-block;
     padding: 10px 20px;
     border-radius: 30px;
-    background: #1f7a4d;
+    background: linear-gradient(135deg, #1f7a4d, #145a3a);
     color: white;
     text-decoration: none;
+    margin-top: 10px;
+
+    transform: translateZ(30px);
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateZ(60px) translateY(-3px);
 }
 
 .btn.secondary {
@@ -101,4 +156,9 @@ ul {
 
 li {
     margin: 8px 0;
+}
+
+/* SMOOTH */
+html {
+    scroll-behavior: smooth;
 }
