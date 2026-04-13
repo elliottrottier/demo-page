@@ -1,170 +1,184 @@
-/* 1. 3D CORE SETUP */
-:root {
-    --deep-green: #020a05;
-    --mid-green: #081a10;
-    --neon-accent: #39ff14;
-    --text-white: #ffffff;
-}
-
-* { box-sizing: border-box; }
-
-body {
-    background-color: var(--deep-green);
-    color: var(--text-white);
-    font-family: 'Plus Jakarta Sans', sans-serif;
+/* RESET */
+* {
     margin: 0;
-    overflow-x: hidden;
-    perspective: 1500px; /* This creates the 3D world depth */
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* 2. FLOATING 3D SUBJECTS (Ornaments) */
-.orb {
-    position: fixed;
+/* BODY */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at top, #0f1f17, #050807);
+    color: #dfeee6;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    overflow-x: hidden;
+}
+
+/* 3D BACKGROUND SHAPES */
+.bg-shape {
+    position: absolute;
     border-radius: 50%;
     filter: blur(80px);
-    z-index: -1;
-    opacity: 0.4;
-}
-.float-1 { width: 300px; height: 300px; background: var(--neon-accent); top: -100px; right: -50px; animation: float 8s infinite ease-in-out; }
-.float-2 { width: 400px; height: 400px; background: #0a2e1a; bottom: -100px; left: -100px; animation: float 12s infinite ease-in-out reverse; }
-
-@keyframes float {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-40px) rotate(10deg); }
+    z-index: 0;
 }
 
-/* 3. LAYOUT & LAYERS */
-.scene {
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 50px 20px;
-    transform-style: preserve-3d;
+.shape1 {
+    width: 300px;
+    height: 300px;
+    background: #1f5c3b;
+    top: 10%;
+    left: 10%;
 }
 
-.layer {
-    margin-bottom: 150px; /* Big spacing for a clean look */
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-.content-box {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px);
-    padding: 60px;
-    border-radius: 50px;
-    box-shadow: 0 40px 100px rgba(0,0,0,0.5);
-    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-.content-box:hover {
-    transform: translateZ(50px) rotateX(5deg) rotateY(-5deg); /* The 3D Pop-out */
-    border-color: var(--neon-accent);
-}
-
-/* 4. TYPOGRAPHY (Thick & Dynamic) */
-h1 {
-    font-size: clamp(3rem, 10vw, 6rem); /* Dynamically scales text size */
-    margin: 10px 0;
-    line-height: 0.9;
-}
-
-.accent {
-    color: var(--neon-accent);
-    text-shadow: 0 0 30px rgba(57, 255, 20, 0.3);
-}
-
-h2 { font-size: 3rem; margin-bottom: 30px; }
-h3 { font-size: 1.8rem; margin: 15px 0; }
-
-/* 5. IMAGE CONTROL (Fixed & Aesthetic) */
-.profile-pic {
-    width: 100px;
-    height: 100px;
-    border-radius: 25px;
-    border: 2px solid var(--neon-accent);
-    margin-bottom: 20px;
-}
-
-.img-frame {
-    width: 100%;
+.shape2 {
+    width: 250px;
     height: 250px;
-    overflow: hidden;
-    border-radius: 30px;
+    background: #0c3b28;
+    bottom: 10%;
+    right: 10%;
 }
 
-.display-img {
+/* MAIN CARD */
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 550px;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.8s ease;
-}
-
-.card-3d:hover .display-img {
-    transform: scale(1.1);
-}
-
-/* 6. GRID & PILLS */
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-}
-
-.game-pills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-}
-
-.pill {
-    background: var(--mid-green);
-    padding: 15px 30px;
-    border-radius: 100px;
-    font-weight: 800;
-    border: 1px solid rgba(255,255,255,0.1);
-}
-
-.activity-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-}
-
-.act-card {
-    background: rgba(57, 255, 20, 0.05);
-    padding: 40px;
-    border-radius: 30px;
-    font-weight: 800;
-    font-size: 1.5rem;
+    background: rgba(15, 25, 20, 0.7);
+    backdrop-filter: blur(20px);
+    border-radius: 25px;
+    padding: 50px 40px;
+    box-shadow: 
+        0 20px 60px rgba(0,0,0,0.6),
+        inset 0 0 0 1px rgba(255,255,255,0.05);
     text-align: center;
+    transform: perspective(1000px);
 }
 
-/* 7. 3D BUTTON */
-.btn-3d {
-    display: inline-block;
-    background: var(--neon-accent);
-    color: #000;
-    padding: 20px 60px;
-    border-radius: 20px;
-    text-decoration: none;
+/* PROFILE IMAGE */
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 25px;
+    border: 3px solid rgba(255,255,255,0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.profile-pic:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* IMAGE SECTION */
+.image-section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* SECONDARY IMAGE */
+.secondary-pic {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    transition: transform 0.4s ease;
+}
+
+.secondary-pic:hover {
+    transform: scale(1.03) rotateX(5deg);
+}
+
+/* TEXT */
+h1 {
+    font-size: 2.2rem;
     font-weight: 800;
-    letter-spacing: 2px;
-    box-shadow: 0 10px 0px #24cc10; /* Bottom shadow for 3D depth */
-    transition: 0.2s;
+    margin: 20px 0;
+    color: #e8fff4;
 }
 
-.btn-3d:active {
-    transform: translateY(5px);
-    box-shadow: 0 5px 0px #24cc10;
+h2 {
+    margin-top: 30px;
+    font-size: 1.4rem;
+    border-left: 4px solid #2ecc71;
+    padding-left: 12px;
+    text-align: left;
+}
+
+h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #9fd6b5;
+}
+
+p {
+    margin: 20px 0;
+    line-height: 1.7;
+    color: #b8d6c5;
+}
+
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 28px;
+    border-radius: 40px;
+    background: linear-gradient(135deg, #1f7a4d, #145a3a);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.btn.secondary {
+    background: transparent;
+    border: 1px solid #2ecc71;
+    color: #2ecc71;
+    margin: 10px;
+}
+
+.btn.secondary:hover {
+    background: #2ecc71;
+    color: #081c15;
+}
+
+/* RESOURCES */
+.resources-section {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px dashed rgba(255,255,255,0.1);
+}
+
+/* LIST */
+ul {
+    margin-top: 30px;
+    text-align: center;
+    list-style: none;
+}
+
+li {
+    margin: 10px 0;
+    color: #a8cbb7;
 }
 
 /* RESPONSIVE */
-@media (max-width: 768px) {
-    .grid, .activity-grid { grid-template-columns: 1fr; }
-    h1 { font-size: 3.5rem; }
-    .content-box { padding: 30px; }
+@media (max-width: 480px) {
+    .container {
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
 }
