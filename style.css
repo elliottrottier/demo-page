@@ -1,0 +1,145 @@
+/* 1. COLOR VARIABLES & SETUP */
+:root {
+    --dark-bg: #0a0e0c; /* Deep black-green */
+    --forest-green: #1b2e25;
+    --accent-green: #2ecc71; /* Aesthetic lime green accent */
+    --text-main: #e0e0e0;
+    --glass-dark: rgba(20, 26, 23, 0.8);
+}
+
+body {
+    background: radial-gradient(circle at top, var(--forest-green) 0%, var(--dark-bg) 100%);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--text-main);
+    margin: 0;
+    padding: 80px 20px;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.6;
+}
+
+/* 2. 3D LAYOUT EFFECTS */
+.perspective-wrapper {
+    perspective: 1000px; /* Essential for 3D depth */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    background: var(--glass-dark);
+    backdrop-filter: blur(20px);
+    max-width: 600px;
+    width: 100%;
+    padding: 50px 40px;
+    border-radius: 40px;
+    border: 1px solid rgba(46, 204, 113, 0.1);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+    text-align: center;
+    margin-bottom: 60px;
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px) rotateX(2deg); /* Subtle 3D tilt on hover */
+}
+
+/* 3. TYPOGRAPHY (Thick & Aesthetic) */
+h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+h1 span {
+    color: var(--accent-green);
+    text-shadow: 0 0 20px rgba(46, 204, 113, 0.4);
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-green);
+    text-align: left;
+    border-left: 5px solid var(--accent-green);
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+/* 4. IMAGES (3D SUBJECTS) */
+.profile-pic {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 30px; /* Modern rounded square look */
+    border: 2px solid var(--accent-green);
+    margin-bottom: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    transform: rotate(-3deg); /* 3D Offset */
+}
+
+.secondary-pic {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    margin: 20px 0;
+    transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.secondary-pic:hover {
+    transform: scale(1.02) rotateY(10deg); /* Professional 3D flip */
+}
+
+/* 5. LISTS & BUTTONS */
+.activity-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    text-align: left;
+}
+
+.activity-list li {
+    background: rgba(255,255,255,0.05);
+    padding: 15px;
+    border-radius: 15px;
+    font-weight: 700;
+    border-bottom: 3px solid var(--accent-green);
+}
+
+.btn {
+    display: inline-block;
+    background: var(--accent-green);
+    color: #000;
+    padding: 15px 40px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    box-shadow: 0 10px 20px rgba(46, 204, 113, 0.2);
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(46, 204, 113, 0.4);
+}
+
+.btn.secondary {
+    background: transparent;
+    border: 2px solid var(--accent-green);
+    color: var(--accent-green);
+    margin: 10px;
+}
+
+/* Scroll Divider */
+.resources-section {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 30px;
+}
