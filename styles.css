@@ -194,3 +194,20 @@ li {
     border: 1px solid #4dd4ff;
     margin-left: 10px;
 }
+/* =========================
+   MOTION SUPPORT FIX
+========================= */
+
+.container {
+    transition: transform 0.1s linear;
+    will-change: transform;
+}
+
+.bg {
+    transition: transform 0.2s ease-out;
+}
+
+/* makes scroll animation smoother */
+h2, h3, p, li, .secondary-pic {
+    will-change: transform, opacity;
+}
