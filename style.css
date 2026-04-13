@@ -1,154 +1,170 @@
-/* 1. THE DARK GREEN THEME */
+/* 1. 3D CORE SETUP */
 :root {
-    --bg-color: #051109;        /* Deepest Dark Green */
-    --card-bg: #0b1a11;         /* Slightly lighter green card */
-    --accent: #d4ff00;          /* High-end Volt Green/Yellow */
+    --deep-green: #020a05;
+    --mid-green: #081a10;
+    --neon-accent: #39ff14;
     --text-white: #ffffff;
-    --text-dim: #a0b0a8;
 }
 
+* { box-sizing: border-box; }
+
 body {
-    background-color: var(--bg-color);
+    background-color: var(--deep-green);
     color: var(--text-white);
     font-family: 'Plus Jakarta Sans', sans-serif;
     margin: 0;
-    padding: 0;
     overflow-x: hidden;
+    perspective: 1500px; /* This creates the 3D world depth */
 }
 
-/* 2. SPACING & LAYOUT (Mac Style) */
-.viewport {
-    max-width: 1000px; /* Constrains the width for desktop viewing */
+/* 2. FLOATING 3D SUBJECTS (Ornaments) */
+.orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: -1;
+    opacity: 0.4;
+}
+.float-1 { width: 300px; height: 300px; background: var(--neon-accent); top: -100px; right: -50px; animation: float 8s infinite ease-in-out; }
+.float-2 { width: 400px; height: 400px; background: #0a2e1a; bottom: -100px; left: -100px; animation: float 12s infinite ease-in-out reverse; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-40px) rotate(10deg); }
+}
+
+/* 3. LAYOUT & LAYERS */
+.scene {
+    width: 100%;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 100px 20px;
+    padding: 50px 20px;
+    transform-style: preserve-3d;
 }
 
-.container {
-    background: var(--card-bg);
+.layer {
+    margin-bottom: 150px; /* Big spacing for a clean look */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.content-box {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
     padding: 60px;
-    border-radius: 40px;
-    margin-bottom: 40px;
-    border: 1px solid rgba(255,255,255,0.05);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+    border-radius: 50px;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.5);
+    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-/* 3. TYPOGRAPHY (Thick & Readable) */
+.content-box:hover {
+    transform: translateZ(50px) rotateX(5deg) rotateY(-5deg); /* The 3D Pop-out */
+    border-color: var(--neon-accent);
+}
+
+/* 4. TYPOGRAPHY (Thick & Dynamic) */
 h1 {
-    font-size: 4rem; /* Massive, bold heading */
-    font-weight: 800;
-    letter-spacing: -2px;
-    margin: 20px 0;
-    line-height: 1;
+    font-size: clamp(3rem, 10vw, 6rem); /* Dynamically scales text size */
+    margin: 10px 0;
+    line-height: 0.9;
 }
 
-h1 .accent { color: var(--accent); }
-
-h2 {
-    font-size: 2.2rem;
-    font-weight: 800;
-    color: var(--accent);
-    margin-bottom: 30px;
+.accent {
+    color: var(--neon-accent);
+    text-shadow: 0 0 30px rgba(57, 255, 20, 0.3);
 }
 
-h3 {
-    font-size: 1.4rem;
-    font-weight: 800;
-    margin-bottom: 20px;
-}
+h2 { font-size: 3rem; margin-bottom: 30px; }
+h3 { font-size: 1.8rem; margin: 15px 0; }
 
-.lead-text {
-    font-size: 1.4rem; /* Larger text for readability */
-    color: var(--text-dim);
-    font-weight: 500;
-}
-
-.body-text {
-    font-size: 1.2rem;
-    color: var(--text-dim);
-    max-width: 700px;
-}
-
-/* 4. IMAGES (Fixed Sizing) */
+/* 5. IMAGE CONTROL (Fixed & Aesthetic) */
 .profile-pic {
-    width: 120px; /* Constrained size */
-    height: 120px;
-    border-radius: 30px;
-    object-fit: cover;
-    border: 3px solid var(--accent);
+    width: 100px;
+    height: 100px;
+    border-radius: 25px;
+    border: 2px solid var(--neon-accent);
     margin-bottom: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
-.grid-section {
+.img-frame {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.display-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.card-3d:hover .display-img {
+    transform: scale(1.1);
+}
+
+/* 6. GRID & PILLS */
+.grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    margin-bottom: 40px;
+    gap: 30px;
 }
 
-.card {
-    background: var(--card-bg);
-    padding: 30px;
-    border-radius: 40px;
-    text-align: center;
+.game-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
 }
 
-.secondary-pic {
-    width: 100%;
-    max-width: 320px; /* Prevents images from being way too big */
-    height: 200px;
-    object-fit: cover;
-    border-radius: 20px;
-    transition: 0.4s;
+.pill {
+    background: var(--mid-green);
+    padding: 15px 30px;
+    border-radius: 100px;
+    font-weight: 800;
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
-.secondary-pic:hover {
-    transform: scale(1.05) translateY(-10px);
-}
-
-/* 5. INTERACTIVE ELEMENTS */
 .activity-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
 
-.item {
-    background: rgba(255,255,255,0.03);
-    padding: 25px;
-    border-radius: 20px;
+.act-card {
+    background: rgba(57, 255, 20, 0.05);
+    padding: 40px;
+    border-radius: 30px;
     font-weight: 800;
-    font-size: 1.2rem;
-    border-left: 5px solid var(--accent);
+    font-size: 1.5rem;
+    text-align: center;
 }
 
-.btn {
+/* 7. 3D BUTTON */
+.btn-3d {
     display: inline-block;
-    background: var(--accent);
+    background: var(--neon-accent);
     color: #000;
-    padding: 20px 40px;
+    padding: 20px 60px;
     border-radius: 20px;
     text-decoration: none;
     font-weight: 800;
-    font-size: 1.1rem;
-    transition: 0.3s;
-    margin: 10px;
+    letter-spacing: 2px;
+    box-shadow: 0 10px 0px #24cc10; /* Bottom shadow for 3D depth */
+    transition: 0.2s;
 }
 
-.btn:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(212, 255, 0, 0.3);
+.btn-3d:active {
+    transform: translateY(5px);
+    box-shadow: 0 5px 0px #24cc10;
 }
 
-.btn.secondary {
-    background: transparent;
-    border: 2px solid rgba(255,255,255,0.2);
-    color: white;
-}
-
-/* Responsive for mobile */
+/* RESPONSIVE */
 @media (max-width: 768px) {
-    h1 { font-size: 2.5rem; }
-    .grid-section, .activity-grid { grid-template-columns: 1fr; }
-    .viewport { padding: 40px 15px; }
+    .grid, .activity-grid { grid-template-columns: 1fr; }
+    h1 { font-size: 3.5rem; }
+    .content-box { padding: 30px; }
 }
