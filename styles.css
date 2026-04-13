@@ -192,7 +192,6 @@ html {
 
 /* entrance animation base */
 .container, .hero, h2, h3, p, li, img {
-    opacity: 0;
     transform: translateY(20px);
     transition: all 0.8s ease;
 }
