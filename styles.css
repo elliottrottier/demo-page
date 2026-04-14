@@ -308,13 +308,71 @@ body.focus-mode #focusBtn {
 
     animation: pulseLight 1s infinite alternate;
 }
+body.focus-mode {
+    background: #000 !important;
+    transition: background 1s ease;
+}
 
-/* flashing light effect */
-@keyframes pulseLight {
+/* fade everything OUT smoothly instead of instant hide */
+body.focus-mode .container,
+body.focus-mode .hero,
+body.focus-mode section,
+body.focus-mode p,
+body.focus-mode h1,
+body.focus-mode h2,
+body.focus-mode h3,
+body.focus-mode ul,
+body.focus-mode img {
+    opacity: 0;
+    transform: scale(0.98);
+    transition: all 0.8s ease;
+    pointer-events: none;
+}
+
+/* BUT KEEP BUTTON VISIBLE ALWAYS */
+#focusBtn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999999;
+
+    opacity: 1 !important;
+    pointer-events: auto !important;
+
+    transition: all 0.5s ease;
+}
+
+/* cinematic spotlight mode button */
+body.focus-mode #focusBtn {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.4);
+
+    background: rgba(255, 255, 255, 0.95);
+    color: black;
+
+    border: none;
+    border-radius: 999px;
+
+    padding: 14px 28px;
+
+    box-shadow:
+        0 0 20px rgba(255,255,255,0.6),
+        0 0 60px rgba(255,255,255,0.3);
+
+    animation: spotlightPulse 1.2s infinite alternate;
+}
+
+/* cinematic pulse (not aggressive flashing) */
+@keyframes spotlightPulse {
     0% {
-        box-shadow: 0 0 10px white, 0 0 30px white;
+        box-shadow:
+            0 0 10px rgba(255,255,255,0.4),
+            0 0 30px rgba(255,255,255,0.2);
     }
     100% {
-        box-shadow: 0 0 40px white, 0 0 80px white;
+        box-shadow:
+            0 0 30px rgba(255,255,255,0.8),
+            0 0 80px rgba(255,255,255,0.4);
     }
 }
