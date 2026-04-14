@@ -36,3 +36,9 @@ elements.forEach(el => observer.observe(el));
 function showAlert() {
     alert("Hello! This is your alert message.");
 }
+const button = document.getElementById("submitBtn");
+
+button.addEventListener("click", () => {
+    const input = document.getElementById("userInput").value;
+    document.getElementById("outputText").textContent = input;
+});
