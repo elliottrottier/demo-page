@@ -67,39 +67,73 @@ function checkAnswer(answer) {
 }
 
 function startBalloons() {
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 25; i++) {
         let balloon = document.createElement("div");
 
         balloon.innerHTML = "🎈";
+
         balloon.style.position = "fixed";
         balloon.style.left = Math.random() * 100 + "vw";
         balloon.style.bottom = "-50px";
-        balloon.style.fontSize = "30px";
-        balloon.style.animation = "floatUp 3s linear forwards";
+
+        // 👇 BIGGER + MORE IMPACTFUL
+        balloon.style.fontSize = (35 + Math.random() * 25) + "px";
+
+        balloon.style.zIndex = "9999";
+        balloon.style.pointerEvents = "none";
+
+        let duration = 2.5 + Math.random() * 2;
+        let drift = (Math.random() - 0.5) * 200;
+
+        balloon.style.transition = `transform ${duration}s linear, opacity ${duration}s`;
 
         document.body.appendChild(balloon);
 
         setTimeout(() => {
+            balloon.style.transform = `translate(${drift}px, -120vh)`;
+            balloon.style.opacity = "0";
+        }, 50);
+
+        setTimeout(() => {
             balloon.remove();
-        }, 3000);
+        }, duration * 1000);
     }
 }
+
 function startRain() {
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 120; i++) { // more particles = more realistic
         let drop = document.createElement("div");
 
         drop.innerHTML = "💧";
+
         drop.style.position = "fixed";
         drop.style.left = Math.random() * 100 + "vw";
-        drop.style.top = "-20px";
-        drop.style.fontSize = "20px";
+        drop.style.top = Math.random() * -100 + "vh";
+
+        // 👇 BIGGER DROPS
+        drop.style.fontSize = (20 + Math.random() * 25) + "px";
+
         drop.style.opacity = "0.7";
-        drop.style.animation = "rainFall 2s linear forwards";
+        drop.style.pointerEvents = "none";
+        drop.style.zIndex = "9999";
+
+        // 👇 REALISTIC VARIATION
+        let duration = 1.5 + Math.random() * 1.5;
+        let drift = (Math.random() - 0.5) * 100;
+
+        drop.style.transform = `translateX(${drift}px)`;
+
+        drop.style.transition = `transform ${duration}s linear`;
 
         document.body.appendChild(drop);
 
         setTimeout(() => {
+            drop.style.transform = `translate(${drift}px, 110vh)`;
+            drop.style.opacity = "0";
+        }, 50);
+
+        setTimeout(() => {
             drop.remove();
-        }, 2000);
+        }, duration * 1000);
     }
 }
