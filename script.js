@@ -54,3 +54,14 @@ document.getElementById("submitBtn").addEventListener("click", () => {
         output.textContent = "Please answer with 'yes' or 'no'.";
     }
 });
+function checkAnswer(answer) {
+    const result = document.getElementById("quizResult");
+
+    if (answer === "correct") {
+        result.textContent = "Correct. Nice thinking.";
+        startBalloons();
+    } else {
+        result.textContent = "Wrong answer.";
+        startRain();
+    }
+}
