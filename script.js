@@ -101,36 +101,34 @@ function startBalloons() {
 }
 
 function startRain() {
-    for (let i = 0; i < 120; i++) { // more particles = more realistic
+    for (let i = 0; i < 120; i++) {
         let drop = document.createElement("div");
 
         drop.innerHTML = "💧";
 
         drop.style.position = "fixed";
         drop.style.left = Math.random() * 100 + "vw";
-        drop.style.top = Math.random() * -100 + "vh";
+        drop.style.top = "-10vh";
 
-        // 👇 BIGGER DROPS
-        drop.style.fontSize = (20 + Math.random() * 25) + "px";
+        // BIGGER DROPS
+        drop.style.fontSize = (25 + Math.random() * 25) + "px";
 
         drop.style.opacity = "0.7";
         drop.style.pointerEvents = "none";
         drop.style.zIndex = "9999";
 
-        // 👇 REALISTIC VARIATION
-        let duration = 1.5 + Math.random() * 1.5;
-        let drift = (Math.random() - 0.5) * 100;
-
-        drop.style.transform = `translateX(${drift}px)`;
-
-        drop.style.transition = `transform ${duration}s linear`;
-
         document.body.appendChild(drop);
 
-        setTimeout(() => {
-            drop.style.transform = `translate(${drift}px, 110vh)`;
-            drop.style.opacity = "0";
-        }, 50);
+        let duration = 1.5 + Math.random() * 1.5;
+        let drift = (Math.random() - 0.5) * 150;
+
+        // FORCE browser to "see" initial state FIRST
+        drop.offsetHeight;
+
+        // THEN animate
+        drop.style.transition = `transform ${duration}s linear, opacity ${duration}s`;
+        drop.style.transform = `translate(${drift}px, 110vh)`;
+        drop.style.opacity = "0";
 
         setTimeout(() => {
             drop.remove();
