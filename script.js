@@ -140,7 +140,6 @@ const focusBtn = document.getElementById("focusBtn");
 focusBtn.addEventListener("click", () => {
     document.body.classList.toggle("focus-mode");
 
-    // optional: label change for clarity
     if (document.body.classList.contains("focus-mode")) {
         focusBtn.textContent = "Exit Focus";
     } else {
