@@ -33,3 +33,6 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 
 elements.forEach(el => observer.observe(el));
+function showAlert() {
+    alert("Hello! This is your alert message.");
+}
