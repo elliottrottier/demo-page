@@ -135,3 +135,8 @@ function startRain() {
         }, duration * 1000);
     }
 }
+const focusBtn = document.getElementById("focusBtn");
+
+focusBtn.addEventListener("click", () => {
+    document.body.classList.toggle("focus-mode");
+});
