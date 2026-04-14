@@ -65,3 +65,21 @@ function checkAnswer(answer) {
         startRain();
     }
 }
+function startBalloons() {
+    for (let i = 0; i < 20; i++) {
+        let balloon = document.createElement("div");
+
+        balloon.innerHTML = "🎈";
+        balloon.style.position = "fixed";
+        balloon.style.left = Math.random() * 100 + "vw";
+        balloon.style.bottom = "-50px";
+        balloon.style.fontSize = "30px";
+        balloon.style.animation = "floatUp 3s linear forwards";
+
+        document.body.appendChild(balloon);
+
+        setTimeout(() => {
+            balloon.remove();
+        }, 3000);
+    }
+}
