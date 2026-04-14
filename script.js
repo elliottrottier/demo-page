@@ -84,3 +84,22 @@ function startBalloons() {
         }, 3000);
     }
 }
+function startRain() {
+    for (let i = 0; i < 50; i++) {
+        let drop = document.createElement("div");
+
+        drop.innerHTML = "💧";
+        drop.style.position = "fixed";
+        drop.style.left = Math.random() * 100 + "vw";
+        drop.style.top = "-20px";
+        drop.style.fontSize = "20px";
+        drop.style.opacity = "0.7";
+        drop.style.animation = "rainFall 2s linear forwards";
+
+        document.body.appendChild(drop);
+
+        setTimeout(() => {
+            drop.remove();
+        }, 2000);
+    }
+}
