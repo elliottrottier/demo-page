@@ -279,57 +279,24 @@ html {
     border-radius: 16px;
 }
 /* =========================
-   FOCUS MODE SYSTEM
+   CINEMATIC FOCUS MODE (SAFE)
 ========================= */
 
 body.focus-mode {
     background: #000 !important;
+    transition: background 0.8s ease;
 }
 
-/* everything disappears */
-body.focus-mode * {
-    opacity: 0 !important;
-    transition: opacity 0.3s ease;
-}
-
-/* BUT keep button visible */
-body.focus-mode #focusBtn {
-    opacity: 1 !important;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1.2);
-    z-index: 99999;
-
-    /* spotlight effect */
-    background: white;
-    color: black;
-    border: none;
-
-    animation: pulseLight 1s infinite alternate;
-}
-body.focus-mode {
-    background: #000 !important;
-    transition: background 1s ease;
-}
-
-/* fade everything OUT smoothly instead of instant hide */
-body.focus-mode .container,
+/* fade ONLY main content (NOT UI controls) */
 body.focus-mode .hero,
-body.focus-mode section,
-body.focus-mode p,
-body.focus-mode h1,
-body.focus-mode h2,
-body.focus-mode h3,
-body.focus-mode ul,
-body.focus-mode img {
+body.focus-mode .container {
     opacity: 0;
     transform: scale(0.98);
     transition: all 0.8s ease;
     pointer-events: none;
 }
 
-/* BUT KEEP BUTTON VISIBLE ALWAYS */
+/* ALWAYS KEEP BUTTON ON TOP */
 #focusBtn {
     position: fixed;
     top: 20px;
@@ -342,14 +309,14 @@ body.focus-mode img {
     transition: all 0.5s ease;
 }
 
-/* cinematic spotlight mode button */
+/* cinematic spotlight mode */
 body.focus-mode #focusBtn {
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(1.4);
+    transform: translate(-50%, -50%) scale(1.5);
 
-    background: rgba(255, 255, 255, 0.95);
-    color: black;
+    background: rgba(255,255,255,0.95);
+    color: #000;
 
     border: none;
     border-radius: 999px;
@@ -360,19 +327,16 @@ body.focus-mode #focusBtn {
         0 0 20px rgba(255,255,255,0.6),
         0 0 60px rgba(255,255,255,0.3);
 
-    animation: spotlightPulse 1.2s infinite alternate;
+    animation: pulse 1.2s infinite alternate;
 }
 
-/* cinematic pulse (not aggressive flashing) */
-@keyframes spotlightPulse {
+@keyframes pulse {
     0% {
-        box-shadow:
-            0 0 10px rgba(255,255,255,0.4),
-            0 0 30px rgba(255,255,255,0.2);
+        box-shadow: 0 0 10px rgba(255,255,255,0.4),
+                    0 0 30px rgba(255,255,255,0.2);
     }
     100% {
-        box-shadow:
-            0 0 30px rgba(255,255,255,0.8),
-            0 0 80px rgba(255,255,255,0.4);
+        box-shadow: 0 0 30px rgba(255,255,255,0.8),
+                    0 0 80px rgba(255,255,255,0.4);
     }
 }
