@@ -42,3 +42,15 @@ button.addEventListener("click", () => {
     const input = document.getElementById("userInput").value;
     document.getElementById("outputText").textContent = input;
 });
+document.getElementById("submitBtn").addEventListener("click", () => {
+    let input = document.getElementById("userInput").value.toLowerCase();
+    let output = document.getElementById("outputText");
+
+    if (input === "yes") {
+        output.textContent = "Nice. You're on the right path.";
+    } else if (input === "no") {
+        output.textContent = "You might change your mind once you get better.";
+    } else {
+        output.textContent = "Please answer with 'yes' or 'no'.";
+    }
+});
