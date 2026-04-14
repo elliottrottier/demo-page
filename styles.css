@@ -278,3 +278,43 @@ html {
     background: rgba(255,255,255,0.03);
     border-radius: 16px;
 }
+/* =========================
+   FOCUS MODE SYSTEM
+========================= */
+
+body.focus-mode {
+    background: #000 !important;
+}
+
+/* everything disappears */
+body.focus-mode * {
+    opacity: 0 !important;
+    transition: opacity 0.3s ease;
+}
+
+/* BUT keep button visible */
+body.focus-mode #focusBtn {
+    opacity: 1 !important;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2);
+    z-index: 99999;
+
+    /* spotlight effect */
+    background: white;
+    color: black;
+    border: none;
+
+    animation: pulseLight 1s infinite alternate;
+}
+
+/* flashing light effect */
+@keyframes pulseLight {
+    0% {
+        box-shadow: 0 0 10px white, 0 0 30px white;
+    }
+    100% {
+        box-shadow: 0 0 40px white, 0 0 80px white;
+    }
+}
